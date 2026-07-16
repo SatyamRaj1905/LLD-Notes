@@ -106,14 +106,35 @@ Now comes the `message.ts` file
 
 -> Creating a Map which will have Key as Userid (string) and Value as Seen (boolean).
 
-Basically you will insert all the userId and its seen boolean value default as `False` and the moment any userId will see that message, mark just in front `True` 
- 
+Basically you will store all the userID who have seen the message, the person who are absent from the map simply means they have not seen the message, Its that simple
 
+#### <span style="color:orange">**STEP 5**</span>
+----------
 
+Now comes the part `chatService.ts`
 
+This will have all that broadcasting logic of messages
 
+:sparkle: See the below code
 
+```javascript
 
+// Ideally we are$$ making users like this and that too in server.ts file
+// 1
+const harshit = new User(generateUID(), "harshit", "99777");
+const rahul = new User(generateUUID(), "rahul", "99777");
+const aditya = new User(generateUUID(), "aditya", "99777");
 
+// and chat like this in server.ts file
+// 2
+const college_group = new GroupChat("college-2016-2020");
+const harshit_rahul_11_chat = new OneToOneChat(harshit, rahul);
 
+```
+Now we need a **Database** in practical life to store these Users name and Chats name (group names) but as currently we dont have that hence we are going to store then **InMemory** using `chatService.ts` file and then making <span style="color:green">**Two Maps, one for Users and another for Chats**</span>
 
+<span style="color:brown">**also i dont want to create users and chat like the above part see `//1` and `//2`**</span> and hence i will create <span style="color:orange">**methods like `createUser`, `createOneToOneChat`, `createGroupChat`**</span>
+
+:bulb: <span style="color:brown">**Can you find the limitation of the above approach ?**</span>
+
+-> Though Singleton pattern (which we have implemented also) guarantees one instance only within the current JavaScript process. If the application runs on multiple servers or processes, each process will have its own ChatService instance. A production chat application would generally store users and chats in a shared database rather than relying only on in-memory maps.

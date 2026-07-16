@@ -10,9 +10,9 @@ interface IDecorator {
 export class Message implements IDecorator {
   constructor(
     private id: string,
-    private sender: User,
+    private sender: User,  // Sent by who
     private content: string,
-    private chat: Chat, // ! As that message can be one to one chat or group chat
+    private chat: Chat, // and Sent to where // ! As that message can be one to one chat or group chat
     private timeStamp: Date = new Date(),
     private seenList: Map<string, boolean> = new Map(), // string for UserId and boolean for Seen
   ) {}
