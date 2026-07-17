@@ -28,6 +28,7 @@ export class ChatService {
     return this.instance;
   }
 
+  // Below three methods are just for the removal of creation of user and chat type in server.ts
   createUser(userName: string, contact: string) {
     const newUser = new User(generateUUID(), userName, contact);
     this.users.set(newUser.getId(), newUser); // Once user is created push it into Map users
@@ -49,16 +50,21 @@ export class ChatService {
     return newGroup;
   }
 
+  // If Lets say Harshit wants to send message "HI" to rahul what all things are required
+  // 1. message content
+  // 2. Sender
+  // 3. To which Type of Chat as well
+  // 4. Ignore Reciever as in onetoone there is one reciever but for groupChat there are many recievers
   sendMessage(senderId: string, chatId: string, content: string) {
-    const sender = this.users.get(senderId);
-    const chat = this.chats.get(chatId);
+    const sender = this.users.get(senderId);  // ! Fetch this from map created above
+    const chat = this.chats.get(chatId); // ! Fetch this from map created above
 
     const message = new Message(generateUUID(), sender, content, chat);
-    chat.addMessage(message);
+    chat.addMessage(message); // So that you can STORE the information in chat so that user can be able to see all the messages
 
     const members = chat.getMembers();
     for (let user of members) {
-      if (user.getId() != sender.getId()) {
+      if (user.getId() != sender.getId()) { // sends the message to everyone except the sender (sender should not recieve itself, it should just see it which we have already done above)
         user.getMessage(message);
       }
     }

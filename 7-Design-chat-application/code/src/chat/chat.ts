@@ -81,7 +81,7 @@ export class GroupChat extends Chat {
     if (memberIndex !== -1) { // Simply means if the memeberIndex not equal to 1 (means the memberIndex was found as equal -1 means not found)
       members.splice(memberIndex, 1);  // . .splice(startIndex, Number of elements to remove starting with startIndex [Included])
     }
-  }
+  } 
 }
 
 // * Reason why we made Chat an abstract class ?
