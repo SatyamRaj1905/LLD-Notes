@@ -1,6 +1,49 @@
 # Design Chat Application
 
-## 1-Requirements
+- [**Design Chat Application**](#design-chat-application)
+  - [**1-Requirements**](#1-requirements)
+  - [**2- Different Entities we can think of**](#2--different-entities-we-can-think-of)
+  - [**3- UML Diagram for the above part**](#3--uml-diagram-for-the-above-part)
+  - [**4- Design Chat Application**](#4--design-chat-application)
+      - [**STEP 1**](#step-1)
+      - [**STEP 2**](#step-2)
+      - [**STEP 3**](#step-3)
+      - [**STEP 5**](#step-5)
+    - [**All about DECORATOR Pattern**](#all-about-decorator-pattern)
+      - [**Decorator Pattern - Beginner-Friendly Explanation**](#decorator-pattern---beginner-friendly-explanation)
+      - [**Simple real-world analogy**](#simple-real-world-analogy)
+      - [**The main problem Decorator solves**](#the-main-problem-decorator-solves)
+      - [**The four roles in the Decorator Pattern**](#the-four-roles-in-the-decorator-pattern)
+      - [**Role 1: Component interface**](#role-1-component-interface)
+      - [**Role 2: Concrete component**](#role-2-concrete-component)
+      - [**Role 3: Base decorator**](#role-3-base-decorator)
+      - [**Role 4: Concrete decorator**](#role-4-concrete-decorator)
+      - [**Execution flow in your code**](#execution-flow-in-your-code)
+      - [:bulb:**Why is the pattern being used here?**](#bulbwhy-is-the-pattern-being-used-here)
+      - [**Stacking multiple decorators**](#stacking-multiple-decorators)
+      - [*Decorator order matters*](#decorator-order-matters)
+      - [**How to identify the Decorator Pattern in code ?**](#how-to-identify-the-decorator-pattern-in-code-)
+      - [**Sign 1: A common interface**](#sign-1-a-common-interface)
+      - [**Sign 2: A wrapper stores the same interface**](#sign-2-a-wrapper-stores-the-same-interface)
+      - [**Sign 3: It delegates work**](#sign-3-it-delegates-work)
+      - [**Sign 4: It adds behavior before or after delegation**](#sign-4-it-adds-behavior-before-or-after-delegation)
+      - [*The fastest pattern-recognition formula*](#the-fastest-pattern-recognition-formula)
+      - [:bulb: **How to identify where Decorator should be used**](#bulb-how-to-identify-where-decorator-should-be-used)
+      - [**Question 1: Is the behavior optional?**](#question-1-is-the-behavior-optional)
+      - [:bulb: **Question 2: Can multiple behaviors be combined?**](#bulb-question-2-can-multiple-behaviors-be-combined)
+      - [**Question 3: Must behavior be added at runtime?**](#question-3-must-behavior-be-added-at-runtime)
+      - [**Question 4: Would inheritance create too many classes?**](#question-4-would-inheritance-create-too-many-classes)
+      - [**Question 5: Should the original class remain unchanged?**](#question-5-should-the-original-class-remain-unchanged)
+      - [**Where Decorator Pattern is commonly used**](#where-decorator-pattern-is-commonly-used)
+      - [**Improved version of our implementation**](#improved-version-of-our-implementation)
+      - [**Decorator versus similar patterns**](#decorator-versus-similar-patterns)
+      - [**Decorator**](#decorator)
+      - [**Adapter**](#adapter)
+      - [**Proxy**](#proxy)
+      - [**Strategy**](#strategy)
+
+
+## **1-Requirements**
 
 1. User 
     - Create a user
@@ -17,7 +60,7 @@
 5. Online Status
     - Show whether a user is online and offline
 
-## 2- Different Entities we can think of
+## **2- Different Entities we can think of**
 
 1. Users
 2. Messages
@@ -26,12 +69,12 @@
 5. Chat
    - Two Types - 1. One-One and 2. Group Chat
 
-## 3- UML Diagram for the above part
+## **3- UML Diagram for the above part**
 
 
 <img src = "uml_chatApplication.png" width=700 height=350>
 
-## 4- Design Chat Application
+## **4- Design Chat Application**
 ----------
 
 >[!NOTE]
@@ -542,7 +585,7 @@ Hi, good morning ❤️ 2, 👍 1
 
 The original object has not been modified.
 
-<span style="color:red">**UNL of DECORATOR PATTERN**</span>
+<span style="color:red">**UML of DECORATOR PATTERN**</span>
 
 ![UMl](image.png)
 
