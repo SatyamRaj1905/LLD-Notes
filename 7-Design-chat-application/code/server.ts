@@ -46,3 +46,4 @@ reaction.addReaction("👍", harshit.getId());
 console.log(reaction.getContent()); // "welcome to the group" ❤️:2, 👍:4, 👌:1
 
 console.log(message.getContent()); // "welcome to the group",
+// We have not changed the logic for message, we are just adding or decorating that same message

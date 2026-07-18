@@ -280,8 +280,6 @@ const decoratedMessage =
 
 You build only the combination you need.
 
----
-
 #### **The four roles in the Decorator Pattern**
 ----------
 
@@ -367,7 +365,7 @@ The base decorator stores another object implementing the same interface:
 protected message: IDecorator
 ```
 
-This is the most important line in the pattern.
+This is the <span style="color:red">**most important line**</span> in the pattern.
 
 It means the decorator can wrap:
 
@@ -412,7 +410,29 @@ means:
 Decorator HAS a component
 ```
 
-<span style="color:orange">**This combination is the heart of the Decorator Pattern.**</span> 
+<span style="color:green">**This combination is the heart of the Decorator Pattern.**</span> 
+
+>[!TIP]
+> A base decorator by itself does nothing useful.
+
+For example:
+
+```javascript
+const decorator = new BaseDecorator(message);
+```
+What should this return?
+
+```js
+decorator.getContent();
+```
+
+Should it add reactions? A timestamp? Encryption? Nothing?
+
+There is no clear answer right ?
+
+Therefore,<span style="color:orange">**we prevent developers from directly creating BaseDecorator objects by declaring it ABSTRACT CLASS**</span> 
+
+This class exists only to provide common structure for child decorators. Do not instantiate it directly.
 
 #### <span style="color:orange">**Role 4: Concrete decorator**</span> 
 
@@ -521,6 +541,11 @@ Hi, good morning ❤️ 2, 👍 1
 ```
 
 The original object has not been modified.
+
+<span style="color:red">**UNL of DECORATOR PATTERN**</span>
+
+![UMl](image.png)
+
 
 #### :bulb:**Why is the pattern being used here?**
 ----------
@@ -1121,3 +1146,4 @@ message.setEncryptionStrategy(
 );
 ```
 Strategy chooses one behavior or algorithm. Decorator layers multiple behaviors.
+

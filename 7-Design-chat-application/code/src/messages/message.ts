@@ -49,7 +49,7 @@ abstract class BaseDecorator implements IDecorator {
   abstract getContent(): string;
 }
 
-type Reaction = {
+type Reaction = { // used below for the type of reactionList
   emoji: string;
   userId: string;
 };
@@ -62,8 +62,8 @@ export class ReactionDecoator extends BaseDecorator {
     super(message);
   }
 
-  addReaction(emoji: string, userId: string) {
-    const alreadyExits = this.reactionList.some(
+  addReaction(emoji: string, userId: string) { // What emoji (emoji) and who send that (userId)
+    const alreadyExits = this.reactionList.some( // ! A single user can put multiple reaction only ONE TIME, like i should react with heart only one time, even can give thumbs up one time
       (r) => r.emoji == emoji && r.userId == userId,
     );
 
@@ -72,10 +72,12 @@ export class ReactionDecoator extends BaseDecorator {
     }
   }
 
-  // "HI GM" ❤️:2, 👍:4, 👌:1
-  getReaction(): string {
-    let summary: Record<string, string[]> = {};
+  // "HI GM" ❤️:2, 👍:4, 👌:1 // This is what we want
+  // so getContent will give the message and getReaction will give the reaction
+  getReaction(): string { // getting the emoji content
+    let summary: Record<string, string[]> = {};  // ! summary currently looks something like this -> ❤️:[userId1, userId3], 👍:[userId2, userId1] and so on..  
 
+    // . Used Record instead of Map as Map does not work with Emojis whereas Record do works
     for (let r of this.reactionList) {
       if (!summary[r.emoji]) {
         summary[r.emoji] = [];
@@ -93,7 +95,7 @@ export class ReactionDecoator extends BaseDecorator {
   }
 
   getContent(): string {
-    // "HI GM" ❤️:2, 👍:4, 👌:1
+    // "HI GM" (this comes from this.message.getContent()) and ❤️:2, 👍:4, 👌:1 (come from this.getReaction()) as stated below
     return this.message.getContent() + " " + this.getReaction();
   }
 }
