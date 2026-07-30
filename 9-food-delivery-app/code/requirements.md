@@ -1,0 +1,45 @@
+## Requirements
+
+- Customer:
+    - Onboard customer
+    - Can have multiple delivery addresses. (at a time, it has to set only one address for ordering)
+- Restaurant:
+    - Onboard restaurant
+    - Restaurant Admin is responsible for managing the restaurant.
+- Restaurant & Menu Management:
+    - Admin can:
+        - Add/Update/Delete menu items.
+        - Mark restaurant as available or unavailable.
+        - Set menu item availability.
+        - Update price and estimated delivery time.
+- Cart & Customizations:
+    - User can:
+        - Add food items to a cart.
+        - Set:
+            - Quantity
+            - Cooking preferences (e.g., spicy, no onions)
+    - Modify or remove items from the cart.
+- Orders & Tracking: (<span style="color:red">**This is Important**</span>)
+    - User can:
+        - Place an order from a single restaurant at a time.
+        - View estimated delivery time.
+        - Track order status (especially this imp., continuous notification of the food status should be sent to the admin, delivery boy, and finally customer who has ordered)
+- Payments:
+    - Users can make payments using:
+        - Credit Card
+        - Debit Card
+        - UPI
+        - Wallets
+    - Should support:
+        - Payment status (Success, Failed, Pending)
+        - Refunds (if order is cancelled)
+- Discounts
+- Delivery boy
+- Push Notification for Every Order status change (<span style="color:red">**This is also Important**</span>)
+- User Restro & Food Browsing:
+    - Search & select for restaurants
+    - Filter and sort:
+        - By Price
+        - By Rating
+        - By Estimated Delivery Time
+    - View restaurant details, ratings, and menu.
