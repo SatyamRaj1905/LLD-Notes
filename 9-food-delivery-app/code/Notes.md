@@ -97,6 +97,25 @@ moving on to `discount.ts` which will also use the <span style="color:orange">**
 
 Now we can finally move to `Order.ts` as we have made `payment.ts` and `discount.ts` (there functions and logic will be used in `order.ts` like what the payment strategy ?, what type of discount is being applied ? and so on..)
 
+Now `users.ts` has `Customer` and in that there is a feature to **Add something in the cart**, `private cart: CartItem[] = [];` Now inside the cart what is there ?
+
+-> Basically **Items right**, but there will be other things as well 
+1.  MenuItem
+2.  Quantity
+3.  Some special instruction
+
+**So for a particular MenuItem, we are going to add the above things as well**
+
+for that we made `CartItem` class inside `order.ts`. and updated the **Type of `cart` to `CartItem`**  wherever it is added.
+
+Now making `Order` class inside `order.ts`
+
+> Who has the power to change the status of order ? (see `enum.ts` file and then assign the responsiblites)
+>
+> Restro will have follwing orderStatus Change permission
+> > PENDING, CONFIRMED, PREPARED, READY FOR DELIVERY, OUT FOR DELIVERY, CANCELLED
+> and Delivery agent will have power to change the order status for following 
+> > DELIVERED
 
 
 

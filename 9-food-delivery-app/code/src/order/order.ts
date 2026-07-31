@@ -25,17 +25,20 @@ export class CartItem {
   }
 }
 
+// ! Implemented OBSERVER PATTERN
+// ! STEP 1 -> The below interface will be implemented by customer and restraunt (not added deliveryAgent, see below point) 
 export interface OrderObserver {
   onOrderStatusChange(order: Order): void;
 }
 
+// . there are three Observers -> customer, restaurant, and delivery agent
 export class Order {
   constructor(
     private id: string,
     private customer: Customer,
     private restaurant: Restro,
-    private grossAmount: number,
-    private netAmount: number,
+    private grossAmount: number, // ! Total amount without discount
+    private netAmount: number, // ! After discount this will be the amount
     private items: CartItem[],
     private paymentStrategy: IPayment,
     private discountStrategy: IDiscount,
@@ -43,10 +46,11 @@ export class Order {
     private orderStatus: OrderStatus = null,
     private orderTime: Date = new Date(),
     private deliveredTime: Date = null,
-    private observers: OrderObserver[] = [],
+    private observers: OrderObserver[] = [], // ! STEP 2 -> Added list of observers
   ) {
     this.addObservers(this.customer);
     this.addObservers(this.restaurant);
+    // * Not added this.addObservors(this.deliveryAgent) as after food order is confirmed, we immediately do not assign any delivery agent, it TAKES TIME
   }
 
   getId(): string {
@@ -70,11 +74,13 @@ export class Order {
 
   changeOrderStatus(newStatus: OrderStatus) {
     this.orderStatus = newStatus;
+    // Below line added after the first version
     this.notifyObservers();
   }
   getNetAmountAfterDiscount() {
     return this.netAmount;
   }
+  // ! STEP 3 -> Added or pushed in the list made for all the observers
   addObservers(observer: any) {
     this.observers.push(observer);
   }
@@ -82,16 +88,19 @@ export class Order {
   getPaymentStrategy(): IPayment {
     return this.paymentStrategy;
   }
+
+  // After some time, they will get assigned
   assignDeliverAgent(agent: DeliveryAgent) {
-    if (agent.isAgentAvailable()) {
+    if (agent.isAgentAvailable()) { // First you will check if the agent is available
       this.deliveryAgent = agent;
-      this.addObservers(agent);
+      this.addObservers(agent); // now agent is being made as Observer
       agent.addOrderToHistory(this);
-    } else {
+    } else { // Or not available
       throw Error("delivery agent is not available");
     }
   }
 
+  // ! Moment the Status of the order changes, you have to notify to all the Observers
   notifyObservers() {
     this.observers.forEach((observer) => observer.onOrderStatusChange(this));
   }

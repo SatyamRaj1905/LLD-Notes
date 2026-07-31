@@ -3,7 +3,8 @@ import { OrderStatus } from "../enum";
 import { CartItem, Order, OrderObserver } from "../order/order";
 import { SwiggyService } from "../swiggyService";
 
-export abstract class User implements OrderObserver {
+export abstract class User implements OrderObserver {// ! Implements the common interface made for the Observor Pattern 
+  //! made it abstract so that this class cannot implement the interface method as all the three observors have different msg and making them implement inside the User class will make all three observer to give output same as User class function implementation 
   constructor(
     private userId: string,
     private name: string,
@@ -26,7 +27,9 @@ export abstract class User implements OrderObserver {
   getEmail(): string {
     return this.email;
   }
-
+  
+  // ! Made this abstract as we want the customer and other observers to have seperate logic (or more precisely MESSAGE ) of onOrderStatusChange 
+  // as we made this abstract, so we have to make the whole User class abstract 
   abstract onOrderStatusChange(order: Order): void;
 }
 
@@ -84,6 +87,7 @@ export class Customer extends User {
   }
 
   // Below function was added after some time, in the first declaration the below one was not present
+  // ! Implemented the common Interface made to implment because of Observer Pattern 
   onOrderStatusChange(order: Order) {
     console.log(`Notifcation for customer - ${this.getName()}
                 for Order - ${order.getId()}
@@ -116,6 +120,7 @@ export class DeliveryAgent extends User {
     return this.isAvailable;
   }
 
+  // Once the order has been recieved by the delivery agents, they also need to change orderstatus
   addOrderToHistory(order: Order) {
     this.deliveryHistory.push(order);
   }
@@ -125,8 +130,9 @@ export class DeliveryAgent extends User {
   setCurrentAddress(address: Address): void {
     this.currentLocation = address;
   }
-
+  // ! Implemented the common Interface made to implment because of Observer Pattern 
   // Below function has been added after the first declaration or version of the delivery agent
+
   onOrderStatusChange(order: Order) {
     console.log(`Notifcation for Delivery - ${this.getName()}
                 for Order - ${order.getId()}
@@ -151,6 +157,7 @@ export class RestroAdmin extends User {
     super(userId, name, phone, email);
   }
 
+  // ! Implemented the common Interface made to implment because of Observer Pattern 
   onOrderStatusChange(order: Order) {
     console.log(`Notifcation for Restro - ${this.getName()}
                 for Order - ${order.getId()}
