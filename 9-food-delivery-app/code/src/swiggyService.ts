@@ -101,7 +101,7 @@ export class SwiggyService {
     }
     order.changeOrderStatus(OrderStatus.CANCELLED); // If in pending then simply change the orderStatus to CANCELLED 
     const paymentS = order.getPaymentStrategy();  // For the refund process, first grabbed the paymentStrategy from Order as Order class has method to get paymentStrategy
-    paymentS.refund(order.getNetAmountAfterDiscount());  // then as all paymentStrategy have refund logic written so just call it
+    paymentS.refund(order.getNetAmountAfterDiscount());  // then as all paymentStrategy have refund logic written so just call it 
   }
 
   assignOrderToDeliveryAgent(orderID: string, deliveryAgentId: string) {
