@@ -89,7 +89,7 @@ export class Order {
     return this.paymentStrategy;
   }
 
-  // After some time, they will get assigned
+  // After some time, delivery agents will get assigned
   assignDeliverAgent(agent: DeliveryAgent) {
     if (agent.isAgentAvailable()) { // First you will check if the agent is available
       this.deliveryAgent = agent;

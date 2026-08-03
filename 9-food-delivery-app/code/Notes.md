@@ -95,7 +95,7 @@ moving on to `discount.ts` which will also use the <span style="color:orange">**
 ### **Step 9 ->**
 ----------
 
-Now we can finally move to `Order.ts` as we have made `payment.ts` and `discount.ts` (there functions and logic will be used in `order.ts` like what the payment strategy ?, what type of discount is being applied ? and so on..)
+Now we can finally move to `order.ts` as we have made `payment.ts` and `discount.ts` (there functions and logic will be used in `order.ts` like what the payment strategy ?, what type of discount is being applied ? and so on..)
 
 Now `users.ts` has `Customer` and in that there is a feature to **Add something in the cart**, `private cart: CartItem[] = [];` Now inside the cart what is there ?
 
@@ -114,8 +114,27 @@ Now making `Order` class inside `order.ts`
 >
 > Restro will have follwing orderStatus Change permission
 > > PENDING, CONFIRMED, PREPARED, READY FOR DELIVERY, OUT FOR DELIVERY, CANCELLED
+> 
 > and Delivery agent will have power to change the order status for following 
 > > DELIVERED
+
+Now we need to change the orderstatus, and `changeOrderStatus` is inside `Order.ts` file, We need to invoke this method inside `restro.ts` this method,
+
+:bulb: **How to do this ?**
+
+-> For this part only we will make `swiggyservice.ts` file
+
+### **Step 10 ->**
+----------
+
+Making file `swiggyservice.ts` file which is going to solve the above problem
+
+**We still not have any class or logic to create customers, restro, deliveryAgents and other manangement level stuff**
+
+`swiggyservive.ts` file makes sure that the above things are handled by this class
+
+**Finally you are good to go now just create the `server.ts` file and get the output**
+
 
 
 

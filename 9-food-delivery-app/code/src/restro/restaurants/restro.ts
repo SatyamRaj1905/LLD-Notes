@@ -9,7 +9,7 @@ export class Restro implements OrderObserver {
     private id: string,
     private name: string,
     private adresss: Address,
-    private menu: Menu = null, // ! as Each Restro has one Menu card only
+    private menu: Menu = null, // ! as Each Restro has one Menu card only and initially that menu can be empty so initiaised with null, later we can add (for that added SetMenu method below )
     private isAvaialble: boolean = true,
     private orderHistory: any[] = [],
   ) {}
@@ -54,8 +54,10 @@ export class Restro implements OrderObserver {
       `);
   }
 
+  // Method to change the status of order (will be able to implement because of swiggyservice class) 
   changeOrderStatus(orderId: string, newStatus: OrderStatus) {
     const swiggyInstance = SwiggyService.getInstance();
     swiggyInstance.updateStatus(orderId, newStatus);
   }
+  // This same above method will be passed to delivery boy (inside users.ts) as he can also change the status of the order
 }
