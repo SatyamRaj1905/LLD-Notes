@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1400" viewBox="0 0 2400 1400">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050812"/>
+      <stop offset="0.48" stop-color="#080C17"/>
+      <stop offset="1" stop-color="#05070D"/>
+    </linearGradient>
+    <radialGradient id="ambient" cx="51%" cy="36%" r="72%">
+      <stop offset="0" stop-color="#1E3A5F" stop-opacity="0.18"/>
+      <stop offset="0.58" stop-color="#111827" stop-opacity="0.04"/>
+      <stop offset="1" stop-color="#05070D" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <marker id="trianglePurple" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M1,1 L9,5.5 L1,10 Z" fill="#0B101B" stroke="#A78BFA" stroke-width="1.5"/>
+    </marker>
+    <marker id="triangleAmber" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M1,1 L9,5.5 L1,10 Z" fill="#171207" stroke="#FBBF24" stroke-width="1.5"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1,1 L8,5 L1,9 Z" fill="#60A5FA"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1,1 L8,5 L1,9 Z" fill="#FBBF24"/>
+    </marker>
+    <marker id="diamondGreen" markerWidth="13" markerHeight="13" refX="3" refY="6.5" orient="auto">
+      <path d="M2,6.5 L6.5,2 L11,6.5 L6.5,11 Z" fill="#091510" stroke="#34D399" stroke-width="1.4"/>
+    </marker>
+    <marker id="diamondPink" markerWidth="13" markerHeight="13" refX="3" refY="6.5" orient="auto">
+      <path d="M2,6.5 L6.5,2 L11,6.5 L6.5,11 Z" fill="#160B13" stroke="#F472B6" stroke-width="1.4"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill:#F8FAFC; font-size:30px; font-weight:750; letter-spacing:-0.5px; }
+      .subtitle { fill:#7E8DA3; font-size:12px; font-weight:600; letter-spacing:1.9px; }
+      .panel-title { font-size:13px; font-weight:750; letter-spacing:1.4px; }
+      .panel-note { fill:#596A81; font-size:10px; font-weight:550; letter-spacing:0.4px; }
+      .card-title { fill:#F8FAFC; font-size:15px; font-weight:720; }
+      .tag { fill:#CFD8E7; font-size:10px; font-weight:550; }
+      .body { fill:#9AA8BA; font-size:11.5px; font-weight:480; }
+      .method { fill:#DCE5F2; font-size:11.5px; font-weight:520; }
+      .compact { font-size:10.5px; }
+      .legend { font-size:11px; font-weight:620; }
+      .tiny { fill:#66758A; font-size:10px; font-weight:500; }
+    </style>
+  </defs>
+  <rect width="2400" height="1400" fill="url(#background)"/>
+  <rect width="2400" height="1400" fill="url(#ambient)"/>
+  <circle cx="1000" cy="330" r="220" fill="#22D3EE" opacity="0.025" filter="url(#softGlow)"/>
+  <text x="38" y="49" class="title">Food Delivery Application</text>
+  <text x="40" y="75" class="subtitle">COMPACT UML  ·  DARK EDITION  ·  TYPESCRIPT</text>
+  <text x="2358" y="48" text-anchor="end" class="tiny">21 TYPES  ·  5 DOMAIN GROUPS  ·  3 DESIGN PATTERNS</text>
+
+    <g>
+      <rect x="30" y="100" width="570" height="1260" rx="22" fill="#0D0B18" stroke="#A78BFA" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="50" y="118" width="4" height="22" rx="2" fill="#A78BFA"/>
+      <text x="66" y="135" class="panel-title" fill="#A78BFA">ACTORS &amp; RESTAURANT</text>
+      <text x="578" y="134" text-anchor="end" class="panel-note">inheritance + observers</text>
+    </g>
+
+    <g>
+      <rect x="620" y="100" width="560" height="290" rx="22" fill="#09111E" stroke="#60A5FA" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="640" y="118" width="4" height="22" rx="2" fill="#60A5FA"/>
+      <text x="656" y="135" class="panel-title" fill="#60A5FA">APPLICATION CORE</text>
+      <text x="1158" y="134" text-anchor="end" class="panel-note">singleton orchestration</text>
+    </g>
+
+    <g>
+      <rect x="620" y="410" width="560" height="950" rx="22" fill="#07151B" stroke="#22D3EE" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="640" y="428" width="4" height="22" rx="2" fill="#22D3EE"/>
+      <text x="656" y="445" class="panel-title" fill="#22D3EE">ORDER DOMAIN</text>
+      <text x="1158" y="444" text-anchor="end" class="panel-note">subject + cart</text>
+    </g>
+
+    <g>
+      <rect x="1200" y="100" width="1170" height="650" rx="22" fill="#151006" stroke="#FBBF24" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="1220" y="118" width="4" height="22" rx="2" fill="#FBBF24"/>
+      <text x="1236" y="135" class="panel-title" fill="#FBBF24">PLUGGABLE STRATEGIES</text>
+      <text x="2348" y="134" text-anchor="end" class="panel-note">runtime-swappable algorithms</text>
+    </g>
+
+    <g>
+      <rect x="1200" y="770" width="750" height="590" rx="22" fill="#07140D" stroke="#34D399" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="1220" y="788" width="4" height="22" rx="2" fill="#34D399"/>
+      <text x="1236" y="805" class="panel-title" fill="#34D399">CATALOG &amp; LOCATION</text>
+      <text x="1928" y="804" text-anchor="end" class="panel-note">menu composition</text>
+    </g>
+
+    <g>
+      <rect x="1970" y="770" width="400" height="370" rx="22" fill="#170A0E" stroke="#FB7185" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="1990" y="788" width="4" height="22" rx="2" fill="#FB7185"/>
+      <text x="2006" y="805" class="panel-title" fill="#FB7185">STATES</text>
+      <text x="2348" y="804" text-anchor="end" class="panel-note">enumerations</text>
+    </g>
+
+    <g>
+      <rect x="1970" y="1160" width="400" height="200" rx="22" fill="#0A101B" stroke="#64748B" stroke-opacity="0.42" stroke-width="1.5"/>
+      <rect x="1990" y="1178" width="4" height="22" rx="2" fill="#64748B"/>
+      <text x="2006" y="1195" class="panel-title" fill="#64748B">RELATIONSHIP KEY</text>
+      <text x="2348" y="1194" text-anchor="end" class="panel-note">essential arrows only</text>
+    </g>
+<path d="M145 380 V355 H315 V335" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#trianglePurple)"/>
+<path d="M335 380 V355 H315" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M510 380 V355 H315" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M900 360 V430" fill="none" stroke="#60A5FA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowBlue)"/>
+<path d="M760 850 V890" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-start="url(#diamondGreen)"/>
+<path d="M1005 850 V890" fill="none" stroke="#F472B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-start="url(#diamondPink)"/>
+<path d="M1155 520 H1180 V255 H1240" fill="none" stroke="#FBBF24" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowAmber)"/>
+<path d="M1155 575 H1185 V510 H1240" fill="none" stroke="#FBBF24" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowAmber)"/>
+<path d="M1680 195 V150 H2160" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M1920 195 V150" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M2160 195 V150" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M1680 150 H1370 V190" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#triangleAmber)"/>
+<path d="M1935 440 V380 H2210" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M2210 440 V380" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6"/>
+<path d="M1935 380 H1390 V450" fill="none" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#triangleAmber)"/>
+<path d="M1710 1010 V1080" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-start="url(#diamondGreen)"/>
+
+    <g filter="url(#cardShadow)">
+      <rect x="55" y="155" width="520" height="180" rx="12" fill="#101827" stroke="#A78BFA" stroke-opacity="0.55"/>
+      <path d="M67 155 H563 Q575 155 575 167 V203 H55 V167 Q55 155 67 155Z" fill="#4C3583"/>
+      <text x="315" y="175" text-anchor="middle" class="card-title">User</text>
+      <text x="315" y="192" text-anchor="middle" class="tag">&lt;&lt;abstract · OrderObserver&gt;&gt;</text>
+      <line x1="55" y1="307" x2="575" y2="307" stroke="#A78BFA" stroke-opacity="0.22"/>
+    </g>
+<text x="69" y="227" class="body">
+<tspan x="69" dy="0">- userId: string</tspan>
+<tspan x="69" dy="18">- name: string</tspan>
+<tspan x="69" dy="18">- phone: string</tspan>
+<tspan x="69" dy="18">- email: string | null</tspan>
+</text>
+<text x="69" y="331" class="method">
+<tspan x="69" dy="0">+ getId() · getName() · getPhone() · getEmail()</tspan>
+<tspan x="69" dy="18">+ onOrderStatusChange(order): void</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="55" y="380" width="165" height="305" rx="12" fill="#101827" stroke="#8B73C7" stroke-opacity="0.55"/>
+      <path d="M67 380 H208 Q220 380 220 392 V428 H55 V392 Q55 380 67 380Z" fill="#30234F"/>
+      <text x="137.5" y="400" text-anchor="middle" class="card-title">Customer</text>
+      <text x="137.5" y="417" text-anchor="middle" class="tag">extends User</text>
+      <line x1="55" y1="524" x2="220" y2="524" stroke="#8B73C7" stroke-opacity="0.22"/>
+    </g>
+<text x="69" y="452" class="body compact">
+<tspan x="69" dy="0">- addresses: Address[]</tspan>
+<tspan x="69" dy="16">- current: Address?</tspan>
+<tspan x="69" dy="16">- history: Order[]</tspan>
+<tspan x="69" dy="16">- cart: CartItem[]</tspan>
+</text>
+<text x="69" y="548" class="method compact">
+<tspan x="69" dy="0">+ addAddress()</tspan>
+<tspan x="69" dy="16">+ setCurrentAddress()</tspan>
+<tspan x="69" dy="16">+ addToCart()</tspan>
+<tspan x="69" dy="16">+ addorderHistory()</tspan>
+<tspan x="69" dy="16">+ onStatusChange()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="235" y="380" width="195" height="330" rx="12" fill="#101827" stroke="#8B73C7" stroke-opacity="0.55"/>
+      <path d="M247 380 H418 Q430 380 430 392 V428 H235 V392 Q235 380 247 380Z" fill="#30234F"/>
+      <text x="332.5" y="400" text-anchor="middle" class="card-title">DeliveryAgent</text>
+      <text x="332.5" y="417" text-anchor="middle" class="tag">extends User</text>
+      <line x1="235" y1="508" x2="430" y2="508" stroke="#8B73C7" stroke-opacity="0.22"/>
+    </g>
+<text x="249" y="452" class="body compact">
+<tspan x="249" dy="0">- isAvailable: boolean</tspan>
+<tspan x="249" dy="16">- history: Order[]</tspan>
+<tspan x="249" dy="16">- location: Address?</tspan>
+</text>
+<text x="249" y="532" class="method compact">
+<tspan x="249" dy="0">+ makeOnline()</tspan>
+<tspan x="249" dy="16">+ makeOffline()</tspan>
+<tspan x="249" dy="16">+ isAgentAvailable()</tspan>
+<tspan x="249" dy="16">+ addOrderToHistory()</tspan>
+<tspan x="249" dy="16">+ setCurrentAddress()</tspan>
+<tspan x="249" dy="16">+ changeOrderStatus()</tspan>
+<tspan x="249" dy="16">+ onStatusChange()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="445" y="380" width="130" height="165" rx="12" fill="#101827" stroke="#8B73C7" stroke-opacity="0.55"/>
+      <path d="M457 380 H563 Q575 380 575 392 V428 H445 V392 Q445 380 457 380Z" fill="#30234F"/>
+      <text x="510" y="400" text-anchor="middle" class="card-title">RestroAdmin</text>
+      <text x="510" y="417" text-anchor="middle" class="tag">extends User</text>
+      <line x1="445" y1="476" x2="575" y2="476" stroke="#8B73C7" stroke-opacity="0.22"/>
+    </g>
+<text x="459" y="452" class="body compact">
+<tspan x="459" dy="0">+ restaurantId: string</tspan>
+</text>
+<text x="459" y="500" class="method compact">
+<tspan x="459" dy="0">+ onStatusChange()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="55" y="760" width="520" height="385" rx="12" fill="#101827" stroke="#A78BFA" stroke-opacity="0.55"/>
+      <path d="M67 760 H563 Q575 760 575 772 V808 H55 V772 Q55 760 67 760Z" fill="#4C3583"/>
+      <text x="315" y="780" text-anchor="middle" class="card-title">Restro</text>
+      <text x="315" y="797" text-anchor="middle" class="tag">&lt;&lt;OrderObserver&gt;&gt;</text>
+      <line x1="55" y1="948" x2="575" y2="948" stroke="#A78BFA" stroke-opacity="0.22"/>
+    </g>
+<text x="69" y="832" class="body">
+<tspan x="69" dy="0">- id: string</tspan>
+<tspan x="69" dy="18">- name: string</tspan>
+<tspan x="69" dy="18">- adresss: Address</tspan>
+<tspan x="69" dy="18">- menu: Menu | null</tspan>
+<tspan x="69" dy="18">- isAvaialble: boolean</tspan>
+<tspan x="69" dy="18">- orderHistory: Order[]</tspan>
+</text>
+<text x="69" y="972" class="method">
+<tspan x="69" dy="0">+ getId() · getName() · getMenu()</tspan>
+<tspan x="69" dy="18">+ setMenu(menu): void</tspan>
+<tspan x="69" dy="18">+ toggleAvailability(): void</tspan>
+<tspan x="69" dy="18">+ addOrderToHistory(order): void</tspan>
+<tspan x="69" dy="18">+ changeOrderStatus(orderId, status): void</tspan>
+<tspan x="69" dy="18">+ onOrderStatusChange(order): void</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="645" y="150" width="510" height="210" rx="12" fill="#101827" stroke="#60A5FA" stroke-opacity="0.55"/>
+      <path d="M657 150 H1143 Q1155 150 1155 162 V198 H645 V162 Q645 150 657 150Z" fill="#174A78"/>
+      <text x="900" y="170" text-anchor="middle" class="card-title">SwiggyService</text>
+      <text x="900" y="187" text-anchor="middle" class="tag">&lt;&lt;Singleton&gt;&gt;</text>
+      <line x1="645" y1="262" x2="1155" y2="262" stroke="#60A5FA" stroke-opacity="0.22"/>
+    </g>
+<text x="659" y="222" class="body compact">
+<tspan x="659" dy="0">+ instance: SwiggyService</tspan>
+<tspan x="659" dy="16">- customers · deliveryAgents · restros · orders: Map</tspan>
+</text>
+<text x="659" y="286" class="method compact">
+<tspan x="659" dy="0">+ getInstance(): SwiggyService</tspan>
+<tspan x="659" dy="16">+ createCustomers() · createDeliveryAgents() · createRestro()</tspan>
+<tspan x="659" dy="16">+ makeOrder(..., payment, discount?): Order</tspan>
+<tspan x="659" dy="16">+ cancelOrder() · assignOrderToDeliveryAgent() · updateStatus()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="645" y="450" width="510" height="400" rx="12" fill="#101827" stroke="#22D3EE" stroke-opacity="0.55"/>
+      <path d="M657 450 H1143 Q1155 450 1155 462 V498 H645 V462 Q645 450 657 450Z" fill="#0E6374"/>
+      <text x="900" y="470" text-anchor="middle" class="card-title">Order</text>
+      <text x="900" y="487" text-anchor="middle" class="tag">&lt;&lt;Observer Subject&gt;&gt;</text>
+      <line x1="645" y1="710" x2="1155" y2="710" stroke="#22D3EE" stroke-opacity="0.22"/>
+    </g>
+<text x="659" y="522" class="body">
+<tspan x="659" dy="0">- id: string</tspan>
+<tspan x="659" dy="18">- customer: Customer</tspan>
+<tspan x="659" dy="18">- restaurant: Restro</tspan>
+<tspan x="659" dy="18">- grossAmount / netAmount: number</tspan>
+<tspan x="659" dy="18">- items: CartItem[]</tspan>
+<tspan x="659" dy="18">- paymentStrategy: IPayment</tspan>
+<tspan x="659" dy="18">- discountStrategy: IDiscount | null</tspan>
+<tspan x="659" dy="18">- deliveryAgent: DeliveryAgent | null</tspan>
+<tspan x="659" dy="18">- orderStatus: OrderStatus</tspan>
+<tspan x="659" dy="18">- observers: OrderObserver[]</tspan>
+</text>
+<text x="659" y="734" class="method">
+<tspan x="659" dy="0">+ changeOrderStatus(status): void</tspan>
+<tspan x="659" dy="18">+ getNetAmountAfterDiscount(): number</tspan>
+<tspan x="659" dy="18">+ getPaymentStrategy(): IPayment</tspan>
+<tspan x="659" dy="18">+ assignDeliverAgent(agent): void</tspan>
+<tspan x="659" dy="18">+ addObservers() · notifyObservers()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="645" y="900" width="230" height="235" rx="12" fill="#101827" stroke="#22D3EE" stroke-opacity="0.55"/>
+      <path d="M657 900 H863 Q875 900 875 912 V938 H645 V912 Q645 900 657 900Z" fill="#123C48"/>
+      <text x="760" y="924" text-anchor="middle" class="card-title">CartItem</text>
+      
+      <line x1="645" y1="1024" x2="875" y2="1024" stroke="#22D3EE" stroke-opacity="0.22"/>
+    </g>
+<text x="659" y="962" class="body">
+<tspan x="659" dy="0">- item: MenuItem</tspan>
+<tspan x="659" dy="18">- quantity: number</tspan>
+<tspan x="659" dy="18">- instructions: string | null</tspan>
+</text>
+<text x="659" y="1048" class="method">
+<tspan x="659" dy="0">+ getItem(): MenuItem</tspan>
+<tspan x="659" dy="18">+ getQuantity(): number</tspan>
+<tspan x="659" dy="18">+ getInstructions(): string</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="900" y="900" width="255" height="165" rx="12" fill="#101827" stroke="#F472B6" stroke-opacity="0.55"/>
+      <path d="M912 900 H1143 Q1155 900 1155 912 V948 H900 V912 Q900 900 912 900Z" fill="#62304F"/>
+      <text x="1027.5" y="920" text-anchor="middle" class="card-title">OrderObserver</text>
+      <text x="1027.5" y="937" text-anchor="middle" class="tag">&lt;&lt;interface&gt;&gt;</text>
+      
+    </g>
+<text x="914" y="972" class="method">
+<tspan x="914" dy="0">+ onOrderStatusChange(order): void</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1240" y="190" width="260" height="130" rx="12" fill="#101827" stroke="#FBBF24" stroke-opacity="0.55"/>
+      <path d="M1252 190 H1488 Q1500 190 1500 202 V238 H1240 V202 Q1240 190 1252 190Z" fill="#72520A"/>
+      <text x="1370" y="210" text-anchor="middle" class="card-title">IPayment</text>
+      <text x="1370" y="227" text-anchor="middle" class="tag">&lt;&lt;interface · Strategy&gt;&gt;</text>
+      
+    </g>
+<text x="1254" y="262" class="method">
+<tspan x="1254" dy="0">+ pay(amount): PaymentStatus</tspan>
+<tspan x="1254" dy="18">+ refund(amount): PaymentStatus</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1580" y="195" width="200" height="100" rx="12" fill="#101827" stroke="#C89B2B" stroke-opacity="0.55"/>
+      <path d="M1592 195 H1768 Q1780 195 1780 207 V243 H1580 V207 Q1580 195 1592 195Z" fill="#3B300F"/>
+      <text x="1680" y="215" text-anchor="middle" class="card-title">CreditCard</text>
+      <text x="1680" y="232" text-anchor="middle" class="tag">implements IPayment</text>
+      
+    </g>
+<text x="1594" y="267" class="method compact">
+<tspan x="1594" dy="0">+ pay() · refund()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1820" y="195" width="200" height="100" rx="12" fill="#101827" stroke="#C89B2B" stroke-opacity="0.55"/>
+      <path d="M1832 195 H2008 Q2020 195 2020 207 V243 H1820 V207 Q1820 195 1832 195Z" fill="#3B300F"/>
+      <text x="1920" y="215" text-anchor="middle" class="card-title">DebitCard</text>
+      <text x="1920" y="232" text-anchor="middle" class="tag">implements IPayment</text>
+      
+    </g>
+<text x="1834" y="267" class="method compact">
+<tspan x="1834" dy="0">+ pay() · refund()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="2060" y="195" width="200" height="100" rx="12" fill="#101827" stroke="#C89B2B" stroke-opacity="0.55"/>
+      <path d="M2072 195 H2248 Q2260 195 2260 207 V243 H2060 V207 Q2060 195 2072 195Z" fill="#3B300F"/>
+      <text x="2160" y="215" text-anchor="middle" class="card-title">UPI</text>
+      <text x="2160" y="232" text-anchor="middle" class="tag">implements IPayment</text>
+      
+    </g>
+<text x="2074" y="267" class="method compact">
+<tspan x="2074" dy="0">+ pay() · refund()</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1240" y="450" width="300" height="120" rx="12" fill="#101827" stroke="#FBBF24" stroke-opacity="0.55"/>
+      <path d="M1252 450 H1528 Q1540 450 1540 462 V498 H1240 V462 Q1240 450 1252 450Z" fill="#72520A"/>
+      <text x="1390" y="470" text-anchor="middle" class="card-title">IDiscount</text>
+      <text x="1390" y="487" text-anchor="middle" class="tag">&lt;&lt;interface · Strategy&gt;&gt;</text>
+      
+    </g>
+<text x="1254" y="522" class="method">
+<tspan x="1254" dy="0">+ applyDiscount(baseAmount): number</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1815" y="440" width="240" height="120" rx="12" fill="#101827" stroke="#C89B2B" stroke-opacity="0.55"/>
+      <path d="M1827 440 H2043 Q2055 440 2055 452 V488 H1815 V452 Q1815 440 1827 440Z" fill="#3B300F"/>
+      <text x="1935" y="460" text-anchor="middle" class="card-title">FlatDiscount</text>
+      <text x="1935" y="477" text-anchor="middle" class="tag">implements IDiscount</text>
+      <line x1="1815" y1="536" x2="2055" y2="536" stroke="#C89B2B" stroke-opacity="0.22"/>
+    </g>
+<text x="1829" y="512" class="body compact">
+<tspan x="1829" dy="0">- flatAmount: number</tspan>
+</text>
+<text x="1829" y="560" class="method compact">
+<tspan x="1829" dy="0">+ applyDiscount(): number</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="2080" y="440" width="260" height="120" rx="12" fill="#101827" stroke="#C89B2B" stroke-opacity="0.55"/>
+      <path d="M2092 440 H2328 Q2340 440 2340 452 V488 H2080 V452 Q2080 440 2092 440Z" fill="#3B300F"/>
+      <text x="2210" y="460" text-anchor="middle" class="card-title">PercentageDiscount</text>
+      <text x="2210" y="477" text-anchor="middle" class="tag">implements IDiscount</text>
+      <line x1="2080" y1="536" x2="2340" y2="536" stroke="#C89B2B" stroke-opacity="0.22"/>
+    </g>
+<text x="2094" y="512" class="body compact">
+<tspan x="2094" dy="0">- percentageDiscount: number</tspan>
+</text>
+<text x="2094" y="560" class="method compact">
+<tspan x="2094" dy="0">+ applyDiscount(): number</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1230" y="830" width="250" height="165" rx="12" fill="#101827" stroke="#34D399" stroke-opacity="0.55"/>
+      <path d="M1242 830 H1468 Q1480 830 1480 842 V868 H1230 V842 Q1230 830 1242 830Z" fill="#174C2D"/>
+      <text x="1355" y="854" text-anchor="middle" class="card-title">Address</text>
+      
+      <line x1="1230" y1="954" x2="1480" y2="954" stroke="#34D399" stroke-opacity="0.22"/>
+    </g>
+<text x="1244" y="892" class="body">
+<tspan x="1244" dy="0">- street: string</tspan>
+<tspan x="1244" dy="18">- city: string</tspan>
+<tspan x="1244" dy="18">- lat / long: string | null</tspan>
+</text>
+<text x="1244" y="978" class="method">
+<tspan x="1244" dy="0">+ getAddress(): string</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1510" y="830" width="400" height="180" rx="12" fill="#101827" stroke="#34D399" stroke-opacity="0.55"/>
+      <path d="M1522 830 H1898 Q1910 830 1910 842 V868 H1510 V842 Q1510 830 1522 830Z" fill="#174C2D"/>
+      <text x="1710" y="854" text-anchor="middle" class="card-title">Menu</text>
+      
+      <line x1="1510" y1="918" x2="1910" y2="918" stroke="#34D399" stroke-opacity="0.22"/>
+    </g>
+<text x="1524" y="892" class="body">
+<tspan x="1524" dy="0">- items: Map&lt;string, MenuItem&gt;</tspan>
+</text>
+<text x="1524" y="942" class="method">
+<tspan x="1524" dy="0">+ addMenuItem(item): void</tspan>
+<tspan x="1524" dy="18">+ remmoveItem(itemId): void</tspan>
+<tspan x="1524" dy="18">+ getMenuItem(itemId): MenuItem</tspan>
+<tspan x="1524" dy="18">+ getAllMenuItems(): MenuItem[]</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1510" y="1090" width="400" height="245" rx="12" fill="#101827" stroke="#34D399" stroke-opacity="0.55"/>
+      <path d="M1522 1090 H1898 Q1910 1090 1910 1102 V1128 H1510 V1102 Q1510 1090 1522 1090Z" fill="#174C2D"/>
+      <text x="1710" y="1114" text-anchor="middle" class="card-title">MenuItem</text>
+      
+      <line x1="1510" y1="1250" x2="1910" y2="1250" stroke="#34D399" stroke-opacity="0.22"/>
+    </g>
+<text x="1524" y="1152" class="body">
+<tspan x="1524" dy="0">- id: string</tspan>
+<tspan x="1524" dy="18">- name: string</tspan>
+<tspan x="1524" dy="18">- price: number</tspan>
+<tspan x="1524" dy="18">- available: boolean</tspan>
+<tspan x="1524" dy="18">- description / category: string | null</tspan>
+</text>
+<text x="1524" y="1274" class="method">
+<tspan x="1524" dy="0">+ getId() · getName() · getPrice()</tspan>
+<tspan x="1524" dy="18">+ getDescription() · getCategory()</tspan>
+<tspan x="1524" dy="18">+ isAvailable(): boolean</tspan>
+<tspan x="1524" dy="18">+ toggleAvailability(): void</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1995" y="830" width="350" height="185" rx="12" fill="#101827" stroke="#FB7185" stroke-opacity="0.55"/>
+      <path d="M2007 830 H2333 Q2345 830 2345 842 V878 H1995 V842 Q1995 830 2007 830Z" fill="#76253D"/>
+      <text x="2170" y="850" text-anchor="middle" class="card-title">OrderStatus</text>
+      <text x="2170" y="867" text-anchor="middle" class="tag">&lt;&lt;enum&gt;&gt;</text>
+      
+    </g>
+<text x="2009" y="902" class="method compact">
+<tspan x="2009" dy="0">PENDING · CONFIRMED · PREPARED</tspan>
+<tspan x="2009" dy="16">READY_FOR_DELIVERY</tspan>
+<tspan x="2009" dy="16">OUT_FOR_DELIVERY · DELIVERED</tspan>
+<tspan x="2009" dy="16">CANCELLED</tspan>
+</text>
+
+    <g filter="url(#cardShadow)">
+      <rect x="1995" y="1035" width="350" height="80" rx="12" fill="#101827" stroke="#FB7185" stroke-opacity="0.55"/>
+      <path d="M2007 1035 H2333 Q2345 1035 2345 1047 V1083 H1995 V1047 Q1995 1035 2007 1035Z" fill="#76253D"/>
+      <text x="2170" y="1055" text-anchor="middle" class="card-title">PaymentStatus</text>
+      <text x="2170" y="1072" text-anchor="middle" class="tag">&lt;&lt;enum&gt;&gt;</text>
+      
+    </g>
+<text x="2009" y="1107" class="method compact">
+<tspan x="2009" dy="0">PENDING · COMPLETED · FAILED</tspan>
+</text>
+
+  <g>
+    <text x="1995" y="1215" class="legend" fill="#A78BFA">△  inheritance / implementation</text>
+    <text x="1995" y="1243" class="legend" fill="#60A5FA">→  application flow</text>
+    <text x="1995" y="1271" class="legend" fill="#34D399">◇  aggregation / composition</text>
+    <text x="1995" y="1299" class="legend" fill="#FBBF24">→  Strategy Pattern</text>
+    <text x="1995" y="1327" class="legend" fill="#F472B6">◇  Observer Pattern</text>
+    <text x="1995" y="1348" class="tiny">Typed members replace redundant cross-panel arrows.</text>
+  </g>
+</svg>

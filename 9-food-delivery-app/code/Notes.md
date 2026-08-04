@@ -84,7 +84,28 @@ Finally comes the `Restro.ts`
 
 Before moving on `Order.ts` file logic, lets quickly make `payment.ts` and `discount.ts` as `order.ts` is **dependent on the above two**
 
-so now writing `payment.ts` logic (followed <span style="color:orange">**Strategy Patter**</span>)
+so now writing `payment.ts` logic (followed <span style="color:orange">**Strategy Pattern**</span>)
+
+:bulb:<span style="color:red">**Why Strategy was needed here ?**</span>
+
+-> Payment is one operation, but there are multiple ways to perform it. Without Strategy, `makeOrder()` might contain growing conditional logic:
+
+```javascript
+if (paymentType === "UPI") {
+  // UPI payment
+} else if (paymentType === "CREDIT_CARD") {
+  // credit-card payment
+} else if (paymentType === "DEBIT_CARD") {
+  // debit-card payment
+}
+```
+That creates several problems:
+- SwiggyService must understand every payment provider.
+- Adding Wallet, Cash on Delivery, or Net Banking requires modifying SwiggyService.
+- Payment-specific validation and API calls would make order placement very large.
+- Refund logic could accidentally use a different payment mechanism.
+
+With Strategy, SwiggyService depends only on IPayment. New payment methods can be added by implementing that interface.
 
 ### **Step 8 ->**
 ----------
